@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eth-quant-research"
+version = "1.1.0"
+description = "A causal, zero-lookahead quantitative research engine and paper-trading harness for ETHUSDT Perpetual Futures."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "ETH Quant Research Community"}
+]
+keywords = [
+    "quantitative-finance",
+    "ethusdt",
+    "algorithmic-trading",
+    "causal-features",
+    "zero-lookahead",
+    "backtesting",
+    "paper-trading"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/m7devcore/ETH-Quant-Research"
+Documentation = "https://github.com/m7devcore/ETH-Quant-Research#readme"
+Repository = "https://github.com/m7devcore/ETH-Quant-Research.git"
+Issues = "https://github.com/m7devcore/ETH-Quant-Research/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

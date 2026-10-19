@@ -1,0 +1,248 @@
+{
+  "package": "ETH Quant Antigravity Workspace",
+  "bundle_file_count_excluding_manifest": 45,
+  "missing_originals": [
+    "ETH_V1_to_V22_Learning_Corpus_and_V23_Methodology.md",
+    "Exact frozen V22 original trained weights+scalers+feature code+signal-level outputs"
+  ],
+  "files": [
+    {
+      "path": ".agents/skills/eth-backtest-audit/SKILL.md",
+      "sha256": "d8f13e27c76e849923e9132fb8bbfa94781d1b29345293635e4a4780b845e4a9",
+      "size_bytes": 1362
+    },
+    {
+      "path": ".agents/skills/eth-research-cycle/SKILL.md",
+      "sha256": "5c1b61b1b30e8e06c0c15b2990d4bde17b28754eba0556f4739f7f0ce1b72f65",
+      "size_bytes": 1514
+    },
+    {
+      "path": ".agents/skills/eth-signal-analysis/SKILL.md",
+      "sha256": "9f2fc7e02545c63eca4055f7b16d03dc7925c0dcc6d53e7dbfbc2d098e34930e",
+      "size_bytes": 1141
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "8aedce0c29f5281e842fd164d2e0d310f29cb97995231da5d648a26d6e2d1358",
+      "size_bytes": 772
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "18d0bdffc992dbed1e5108961e09e126e6485e038458ec370c5153ac8ff4edf6",
+      "size_bytes": 3539
+    },
+    {
+      "path": "README_AR.md",
+      "sha256": "2232681809ac9f54f35db82d46088aeb5d199162c853531b66b4825bcaf22935",
+      "size_bytes": 3240
+    },
+    {
+      "path": "START_HERE.md",
+      "sha256": "801d7e0f31e9acfd3ef6a68f23537a4827bbf80f1f04e21b4ab790961c0e40a3",
+      "size_bytes": 1068
+    },
+    {
+      "path": "artifacts/unverified/ETH_V22_Reconstruction_Audit_Model.UNVERIFIED.json",
+      "sha256": "fa367bd77adc597448ac7d163e6297986d365c2af93bbf0fc7226c992f7fea28",
+      "size_bytes": 3531
+    },
+    {
+      "path": "config/research_mode.json",
+      "sha256": "a93777b594712dc35751187bedd06e0b0dd875fc5e3812a8ecf462ca51fe4e72",
+      "size_bytes": 537
+    },
+    {
+      "path": "data/raw/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "path": "docs/RESEARCH_PROTOCOL.md",
+      "sha256": "a29d66506df64f88b4c29b8772f020c3611f041e9f540fd3586089593bfd42db",
+      "size_bytes": 2886
+    },
+    {
+      "path": "docs/SKILL_ARCHITECTURE.md",
+      "sha256": "b4add91e869c8b52b6db63b5cc22f2cfe47e9a5b422a52e4683edaa8c795564e",
+      "size_bytes": 1221
+    },
+    {
+      "path": "docs/SOURCE_STATUS.md",
+      "sha256": "f54db99c32e137315e800ff5d1d6ef314fba9e8d8c2cdb3e8ef8c1f9c0e87f1b",
+      "size_bytes": 2396,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "outputs/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "path": "prompts/01_BOOTSTRAP_PROMPT.md",
+      "sha256": "c139fe8738ac1150e76d8962b2143272d1e095270046abff529efcac8f672e5f",
+      "size_bytes": 2564
+    },
+    {
+      "path": "prompts/02_RESEARCH_CYCLE_PROMPT.md",
+      "sha256": "49c3e210ded11033bf9836ecc4dc6b5415c667977eec159451b574969c43df75",
+      "size_bytes": 1164
+    },
+    {
+      "path": "research/RESEARCH_LESSONS.md",
+      "sha256": "10f415f5354b174a1366fac505f1ce27d79e4496aa55f0ccc5885a8db00f15a1",
+      "size_bytes": 2965
+    },
+    {
+      "path": "research/backtests/V01_ETH_4H_Backtest_Report_14D_vs_7D.md",
+      "sha256": "912b7d149904bd6a44535fa4af1ced7c003db465f39ef85c544387ef2edf2f47",
+      "size_bytes": 11792
+    },
+    {
+      "path": "research/backtests/V02_ETH_4H_15m_Blind_Backtest_2026-08-23_to_2026-09-13.md",
+      "sha256": "fa52397e9d11494c15e1294d2ac003b9fffcb0862d24d7c003a6b27416c8f1ba",
+      "size_bytes": 22052
+    },
+    {
+      "path": "research/backtests/V03_ETH_4H_15m_5m_Blind_Backtest_V3_2026-08-01_to_2026-08-22.md",
+      "sha256": "2e28b211eb0eae7ec3cbde8fa0dcbcff89903866846a3e04f81c91deb7668445",
+      "size_bytes": 23281
+    },
+    {
+      "path": "research/backtests/V04_ETH_1D_4H_15m_5m_Blind_Backtest_V4_2026-07-25_to_2026-08-14.md",
+      "sha256": "e8b26fdcaec51cf18ded7ae41718c9be689ef193a6aa4d81316897fe15bb890e",
+      "size_bytes": 21008
+    },
+    {
+      "path": "research/backtests/V05_ETH_1D_4H_15m_5m_Blind_Backtest_V5_2026-07-04_to_2026-07-24.md",
+      "sha256": "fef32027b4657c2acd3e027958fc538b6738b257865980faf2e89375ec35744a",
+      "size_bytes": 26755
+    },
+    {
+      "path": "research/backtests/V06_ETH_1D_4H_15m_5m_Blind_Backtest_V6_2026-06-13_to_2026-07-03.md",
+      "sha256": "4218611d581c754ce94ab965b2d1d74930ca0ccfc4b64a8a74a3a853e657a8d3",
+      "size_bytes": 22737
+    },
+    {
+      "path": "research/backtests/V07_ETH_1D_4H_15m_5m_Blind_Backtest_V7_2026-05-23_to_2026-06-12.md",
+      "sha256": "bd4c4d30e88c2b6f9e275735ba7d9b6bd46e0a8cac46bfffc371efde9d82c51a",
+      "size_bytes": 24214
+    },
+    {
+      "path": "research/backtests/V08_ETH_1D_4H_15m_5m_Blind_Backtest_V8_2026-05-02_to_2026-05-22.md",
+      "sha256": "43664d74d0def0dd4332cf061a952e1b21db21cf6760f2e2ec4d2edfc6f6a495",
+      "size_bytes": 28615
+    },
+    {
+      "path": "research/backtests/V09_ETH_1D_4H_15m_5m_Blind_Backtest_V9_2026-04-11_to_2026-05-01.md",
+      "sha256": "0129b2cba8d8722e1e0cf3fbd9ed146409a97990bfd5a2a8299af8ecbcc34cb3",
+      "size_bytes": 28502
+    },
+    {
+      "path": "research/backtests/V10_ETH_1D_4H_15m_5m_Blind_Backtest_V10_2026-03-21_to_2026-04-10.md",
+      "sha256": "979762c2f176d9b77e3a3729152a52d641fc0b55b179e21c3de6d6c9f0073b59",
+      "size_bytes": 43471
+    },
+    {
+      "path": "research/backtests/V11_ETH_1D_4H_15m_5m_Blind_Backtest_V11_2026-02-28_to_2026-03-20.md",
+      "sha256": "6f0b566a6f6a4fc54a068462aa9233a983c14d3db331fe64a77840ad5c403bbb",
+      "size_bytes": 36125,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V12_ETH_1D_4H_15m_5m_Blind_Backtest_V12_2026-02-07_to_2026-02-27.md",
+      "sha256": "e9b16a7215651db2076d6bd77db1841c328ee18b93d50c7b7682c458f735af0d",
+      "size_bytes": 31930,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V13_ETH_1D_4H_15m_5m_Blind_Backtest_V13_2026-01-17_to_2026-02-06.md",
+      "sha256": "1038eb82a2455621d63737ae8fe27773531fa46f68d462aa13f700ea58b824a6",
+      "size_bytes": 25771,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V14_ETH_1D_4H_15m_5m_Blind_Backtest_V14_2025-12-27_to_2026-01-16.md",
+      "sha256": "33d1f6383fd2cc01b47614925a3e40d9062979ac841a2046c7a8916d889cf8cf",
+      "size_bytes": 23197,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V15_ETH_1D_4H_15m_5m_Blind_Backtest_V15_2025-12-06_to_2025-12-26.md",
+      "sha256": "c28337d2b37a9d8978f694d041c203db0ddff0d2c999ca2484df785345052608",
+      "size_bytes": 31716,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V16_ETH_1D_4H_15m_5m_Blind_Backtest_V16_2025-11-15_to_2025-12-05.md",
+      "sha256": "8712bc872fae67fee476c0984192399d5742c71bcc4fc7f4b0b0e8cb5eef8d45",
+      "size_bytes": 20204,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V17_ETH_1D_4H_15m_5m_Blind_Backtest_V17_2025-10-25_to_2025-11-14.md",
+      "sha256": "12b93da4123addf9f105c486b7824e42aee60c5a727daff027d2caf368eb166d",
+      "size_bytes": 21140,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V18_ETH_1D_4H_15m_5m_Blind_Backtest_V18_2025-10-04_to_2025-10-24.md",
+      "sha256": "bab09284e419a72ed467cf85515dcf9e2190a8c42985288f93a352a1ce2a1147",
+      "size_bytes": 23112
+    },
+    {
+      "path": "research/backtests/V19_ETH_1D_4H_15m_5m_Blind_Backtest_V19_2025-09-13_to_2025-10-03.md",
+      "sha256": "4410b961b6d3d07fb880da7010a20c073cc3e6183c9331729ea8635bdedc327c",
+      "size_bytes": 30249,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V20_ETH_1D_4H_15m_5m_Blind_Backtest_V20_2025-08-23_to_2025-09-12.md",
+      "sha256": "947a9231d5dc15657616b2aab4e9c5efb7f0bf8b9bc452e3d300bd21c396d8ee",
+      "size_bytes": 26099,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V21_ETH_1D_4H_15m_5m_Blind_Backtest_V21_2025-08-02_to_2025-08-22.md",
+      "sha256": "00fc417b830d8ea68524ed9f9fffa52b7ffa1c40db2275d68ec2ca170673304a",
+      "size_bytes": 23997,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/backtests/V22_ETH_Multi_Regime_Blind_Backtest_V22_2025-07-12_to_2025-08-01.md",
+      "sha256": "dbb7c326e8e3dab42fd5be38fc66d21a07b9fec696015ce2b67253630715832d",
+      "size_bytes": 20465,
+      "provenance": "privacy_redacted_copy"
+    },
+    {
+      "path": "research/reference/ETH_V1_to_V21_Learning_Corpus_and_V22_Methodology.md",
+      "sha256": "76696eec76c2e68107c407cca2c13eab7a1b05dfa478035c389d5907c95d1e5f",
+      "size_bytes": 1285
+    },
+    {
+      "path": "research/reference/ETH_V23_PreRegistration.md",
+      "sha256": "af79a1c429eec51e0bf459db19ae7a744f1cb41fa0c044bc75ccecc793d34602",
+      "size_bytes": 5065
+    },
+    {
+      "path": "scripts/check_workspace.py",
+      "sha256": "aebfaa21b192c8de696b26d5ce5c2d58f5950652567eb5690e4d2bfb55b8b92f",
+      "size_bytes": 823
+    },
+    {
+      "path": "src/eth_research/__init__.py",
+      "sha256": "084864ffe0e22e2d0ac78feef841b11d5f602d50a9405bc42344395544d66d25",
+      "size_bytes": 62
+    },
+    {
+      "path": "src/eth_research/policy.py",
+      "sha256": "26c300e0131b13b621cf800173fc69ab0306bcf5ae7ee3b61a589dc918ab6328",
+      "size_bytes": 1839
+    },
+    {
+      "path": "tests/test_policy.py",
+      "sha256": "140826c408fad769f2082744cc937c9ad107fe663049a0fb1954de98e5906687",
+      "size_bytes": 1103
+    }
+  ],
+  "manifest_note": "Public release manifest. Historical reports V11-V22 reflect privacy redaction of personal names; core strategy and code artifacts preserve exact frozen hashes."
+}

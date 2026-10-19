@@ -1,0 +1,20 @@
+{
+  "mode": "research_only",
+  "allow_live_trading": false,
+  "allow_private_api": false,
+  "default_symbol": "ETHUSDT",
+  "venue": "Binance USD-M Perpetual",
+  "report_timezone": "Europe/Istanbul",
+  "signal_horizon": "next_15m",
+  "frozen_v22_decision": {
+    "up_gte": 0.55,
+    "down_lte": 0.45,
+    "max_spread_lte": 0.06,
+    "min_normalized_rms_distance_lte": 2.0
+  },
+  "v23": {
+    "start_local": "2025-07-05T00:00:00+03:00",
+    "end_local": "2025-07-11T23:59:59+03:00",
+    "status": "SEALED_PENDING_EXACT_MODEL_PARITY"
+  }
+}

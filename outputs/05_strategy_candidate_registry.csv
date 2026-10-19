@@ -1,0 +1,11 @@
+strategy_id,strategy_name,holding_horizon,primary_filter,purged_execution,adaptation_trades,adaptation_net_pnl_pct,adaptation_win_rate_pct,adaptation_profit_factor,adaptation_max_dd_pct,fresh_trades,fresh_net_pnl_pct,fresh_win_rate_pct,fresh_profit_factor,fresh_max_dd_pct,cross_regime_verdict,rejection_or_acceptance_reason
+Cand_A_15m,Frozen V22-R Baseline,15m,None,False,108,-6.47,47.2,0.71,7.87,81,-4.58,43.2,0.64,5.54,REJECTED,Negative net expectancy across both periods due to 12 bps taker drag
+Cand_A_30m,V22-R Extended 30m,30m,None,False,108,+1.87,50.9,1.08,3.75,81,-8.77,33.3,0.53,10.08,REJECTED,Regime collapse on Fresh Test control; win rate drops to 33.3%
+Cand_A_1h,V22-R Extended 1h,1h,None,False,108,+7.89,51.9,1.25,4.42,81,-6.67,46.9,0.71,10.45,REJECTED,Severe regime discrepancy between Adaptation (+7.9%) and Fresh (-6.7%)
+Cand_A_2h,V22-R Extended 2h,2h,None,False,108,+30.69,60.2,2.05,4.33,81,-15.96,39.5,0.56,19.37,REJECTED,Catastrophic drawdown on Fresh Test (-16.0% PnL / 19.4% Max DD)
+Cand_A_4h,V22-R Extended 4h,4h,None,False,108,+3.53,50.9,1.06,11.69,81,-21.43,37.0,0.52,21.78,REJECTED,Severe trend degradation over 16 bars on Fresh Test control
+Cand_B_HTF,Macro 4H Trend Aligned,15m,Feature 17 HTF Alignment,False,53,-5.80,43.4,0.53,6.29,35,-3.36,42.9,0.42,3.53,REJECTED,Halved sample size without improving win rate; negative PnL across both
+Cand_C_HighConv,High Conviction Edge Filter,15m,p_avg >= 0.57 or <= 0.43 & spread <= 0.04,False,13,-1.83,53.8,0.45,2.54,5,+0.14,80.0,1.48,0.30,INSUFFICIENT_SAMPLE,Extremely sparse signal count (only 5 trades in Fresh 13 in Adapt); inconclusive
+Cand_D_VolGate,Volatility Tradeability Gate,15m,ATR/Price >= 0.0020,False,108,-6.47,47.2,0.71,7.87,81,-4.58,43.2,0.64,5.54,REJECTED,Identical to baseline in these windows as volatility stayed above low cutoff
+Cand_E_Vol_1h,Volatility Gate + 1h Hold,1h,ATR/Price >= 0.0020,False,108,+7.89,51.9,1.25,4.42,81,-6.67,46.9,0.71,10.45,REJECTED,Vol filter alone does not prevent the chop losses in Fresh Test
+Cand_E_Purged_1h,Vol Gate + 1h Non-Overlapping,1h,Purged Execution,True,78,+4.27,50.0,1.18,5.14,56,-4.43,50.0,0.68,5.85,REJECTED,Removes overlap bias but remains negative on Fresh Test (-4.43%)

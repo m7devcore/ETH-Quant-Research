@@ -1,0 +1,35 @@
+name: CI Test Suite & Integrity Audit
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    name: Test & Audit (Python ${{ matrix.python-version }} on ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify Workspace Integrity & Original Reports
+        run: python scripts/check_workspace.py
+
+      - name: Run Full Test Suite (63 tests)
+        run: python -m unittest discover -s tests -v
+
+      - name: Run Operational Health Check Diagnostic
+        run: python src/eth_research/runner.py --check --db-path temp_test_health.sqlite3

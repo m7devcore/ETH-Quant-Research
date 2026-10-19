@@ -1,0 +1,97 @@
+{
+  "manifest_version": "1.1.0",
+  "freeze_timestamp_utc": "2026-10-09T12:00:00Z",
+  "freeze_date_reference": "2026-10-09",
+  "strategy_identifier": "ETH-V22-D1",
+  "strategy_status": "FROZEN_FOR_PROSPECTIVE_EVALUATION",
+  "repository_git_hash": "NOT_APPLICABLE_NO_GIT_DIR",
+  "preregistered_evaluation_window": {
+    "start_datetime_istanbul": "2026-10-12T00:00:00+03:00",
+    "end_datetime_istanbul": "2026-11-08T23:59:59.999999+03:00",
+    "start_timestamp_utc_ms": 1791752400000,
+    "end_timestamp_utc_ms": 1794171599999,
+    "duration_calendar_days": 28,
+    "expected_15m_bars": 2688
+  },
+  "frozen_strategy_parameters": {
+    "base_model": "V22-R Reconstructed Ensemble",
+    "direction_long_threshold": 0.55,
+    "direction_short_threshold": 0.45,
+    "max_expert_spread": 0.04,
+    "max_support_distance": 1.8,
+    "min_volatility_ratio_atr7_close": 0.0018,
+    "stop_loss_multiplier_atr7": 1.5,
+    "take_profit_multiplier_atr7": 2.5,
+    "stop_and_target_behavior": "FIXED_AT_ENTRY",
+    "max_holding_horizon_bars": 4,
+    "max_concurrent_positions": 1,
+    "account_capital_usd": 10000.0,
+    "position_size_usd": 10000.0,
+    "leverage": 1.0,
+    "conservative_tie_breaking": "STOP_LOSS_FIRST"
+  },
+  "cost_model_assumptions_taker": {
+    "entry_fee_rate": 0.0005,
+    "exit_fee_rate": 0.0005,
+    "half_spread_pct": 5e-05,
+    "slippage_pct": 5e-05,
+    "total_roundtrip_friction_pct": 0.0012
+  },
+  "file_integrity_hashes": {
+    "model_checkpoint_sha256": {
+      "path": "artifacts/unverified/ETH_V22_Reconstruction_Audit_Model.UNVERIFIED.json",
+      "sha256": "fa367bd77adc597448ac7d163e6297986d365c2af93bbf0fc7226c992f7fea28"
+    },
+    "feature_engine_sha256": {
+      "path": "src/eth_research/features.py",
+      "sha256": "a8d8525cb946bfa09afa0ba541d07c777f8d7ee7377780e29d0451bfb0fb5910"
+    },
+    "decision_policy_sha256": {
+      "path": "src/eth_research/policy.py",
+      "sha256": "26c300e0131b13b621cf800173fc69ab0306bcf5ae7ee3b61a589dc918ab6328"
+    },
+    "dynamic_portfolio_engine_sha256": {
+      "path": "src/eth_research/dynamic_portfolio.py",
+      "sha256": "b07d45aec4e43ce1bdd12fa6df019f989d84ac0439dfe9b7adb713784394a086"
+    },
+    "candidate_strategy_engine_sha256": {
+      "path": "src/eth_research/candidates.py",
+      "sha256": "6d29d479df765c857b943d06774276b398ba5bb3852bf05dc1d0bb0359610ea0"
+    },
+    "execution_simulator_sha256": {
+      "path": "src/eth_research/execution.py",
+      "sha256": "3d2b13212e8aa75fe12b6dbb6e2816d3544e59528efba21489cbb189ca992495"
+    },
+    "data_infrastructure_sha256": {
+      "path": "src/eth_research/data.py",
+      "sha256": "142abaf0e5de6bf415b0bc4a045df4c2eb544e1497e7b88107ae69ed9df4443a"
+    },
+    "strategy_specification_sha256": {
+      "path": "outputs/05b_strategy_specification.md",
+      "sha256": "8d623ce7e4f6a4efd8ecbf8cf3dce9a8fceee154825d804a10b0e71c562d1c6a"
+    },
+    "forward_validation_protocol_sha256": {
+      "path": "outputs/05b_forward_validation_protocol.md",
+      "sha256": "de5d26df4541e0d2ad15783676584e8194551826f61d92665f0a8520728eed3d"
+    },
+    "protocol_correction_sha256": {
+      "path": "outputs/05b_protocol_correction.md",
+      "sha256": "987a3b1d508c09b5d30692fa285ae9127fa89e061d75c3b57f4b376d39333140"
+    },
+    "persistence_manager_sha256": {
+      "path": "src/eth_research/persistence.py",
+      "sha256": "9e3b7544cd38d8cf0b1499532647737c26688f005bd72f3bac5d879a78e2f5a5",
+      "scope": "non_strategy_operational_infrastructure"
+    },
+    "paper_trading_runner_sha256": {
+      "path": "src/eth_research/runner.py",
+      "sha256": "dc8b6156afd1a14c4113f1af7201a0074d112b3a6d51489fa6eec4363df01f28",
+      "scope": "non_strategy_operational_infrastructure"
+    },
+    "model_loader_sha256": {
+      "path": "src/eth_research/model.py",
+      "sha256": "8382013ad6437d674b843cc98cc76e7d311458fefdd42b41812e7b280ab81f61",
+      "scope": "non_strategy_operational_infrastructure"
+    }
+  }
+}

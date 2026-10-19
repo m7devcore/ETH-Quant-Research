@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.obj
+*.o
+*.pyd
+
+# Environments & virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.*
+secrets/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Unit test / coverage / linters
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local databases and runtime state
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite
+*.db
+data/paper_trading_state.sqlite3*
+
+# Logs & temp directories
+*.log
+logs/*
+!logs/.gitkeep
+tmp/
+
+# Cache directories (preserve structure with .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
