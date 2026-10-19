@@ -2,7 +2,7 @@ name: CI Test Suite & Integrity Audit
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, "fix/**" ]
   pull_request:
     branches: [ main, master ]
 
@@ -17,6 +17,9 @@ jobs:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
+      - name: Disable Git autocrlf on Windows (Preserve exact LF bytes)
+        run: git config --global core.autocrlf false
+
       - name: Check out repository
         uses: actions/checkout@v4
 
@@ -25,11 +28,35 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install package in editable mode
+        run: pip install -e .
+
       - name: Verify Workspace Integrity & Original Reports
         run: python scripts/check_workspace.py
 
-      - name: Run Full Test Suite (63 tests)
+      - name: Verify Frozen Strategy Checksum Hashes (13 Files)
+        run: python scripts/verify_frozen_hashes.py
+
+      - name: Run Full Python Test Suite (63 tests)
         run: python -m unittest discover -s tests -v
 
-      - name: Run Operational Health Check Diagnostic
-        run: python src/eth_research/runner.py --check --db-path temp_test_health.sqlite3
+      - name: Run Deterministic Offline CI Health Checks
+        run: python scripts/check_offline_health.py
+
+      - name: Live Binance Futures API Diagnostic (Separate & Optional)
+        run: python scripts/diagnose_live_api.py
+        continue-on-error: true
+
+  gitleaks:
+    name: Secret Scanning (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Gitleaks Secret Scanner
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
