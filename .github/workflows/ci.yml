@@ -37,7 +37,10 @@ jobs:
       - name: Verify Frozen Strategy Checksum Hashes (13 Files)
         run: python scripts/verify_frozen_hashes.py
 
-      - name: Run Full Python Test Suite (63 tests)
+      - name: Verify Research-Only Safety Guard
+        run: python -m unittest discover -s tests -p test_research_only_safety.py -v
+
+      - name: Run Full Python Test Suite
         run: python -m unittest discover -s tests -v
 
       - name: Run Deterministic Offline CI Health Checks
