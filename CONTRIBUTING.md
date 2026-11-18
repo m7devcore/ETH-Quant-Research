@@ -68,6 +68,15 @@ To protect this project from the common pitfalls of quantitative research (such 
 
 ---
 
-## 4. Code of Conduct
+## 4. Safety, Claims and Release Requirements
+
+- Do not introduce exchange order-submission, authenticated account APIs, private API keys, wallet handling, leverage changes, or live-execution pathways into this research repository.
+- Review any change in network access or dependencies; keep `tests/test_research_only_safety.py` and the existing CI suite passing. Static policy checks do not replace independent review.
+- Never advertise simulated PnL, historical win rates, or reconstructed model metrics as guaranteed or independently verified investment returns. Preserve negative outcomes and limitations.
+- Review [the full disclaimer](DISCLAIMER.md) and [known limitations](docs/SAFETY_AND_LIMITATIONS.md) when research, model behavior, or risk assumptions change.
+
+---
+
+## 5. Code of Conduct
 
 We are committed to providing a welcoming, inclusive, and professional environment for all contributors. Please maintain constructive and respectful discourse in all issues and pull requests.

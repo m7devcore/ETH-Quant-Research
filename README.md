@@ -3,11 +3,13 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![CI Suite](https://github.com/m7devcore/ETH-Quant-Research/actions/workflows/ci.yml/badge.svg)](https://github.com/m7devcore/ETH-Quant-Research/actions)
-[![Zero Lookahead](https://img.shields.io/badge/Leakage_Audit-0_Lookahead_Verified-success)](docs/RESEARCH_PROTOCOL.md)
+[![Causality Checks](https://img.shields.io/badge/Causality-Checks_in_CI-blue)](docs/RESEARCH_PROTOCOL.md)
 [![Preregistration](https://img.shields.io/badge/Methodology-Preregistered_Frozen_Gates-purple)](outputs/05b_freeze_manifest.json)
 [![Standard Library](https://img.shields.io/badge/Dependencies-Standard_Library_Only-brightgreen)](pyproject.toml)
 
 > **Causal, zero-lookahead quantitative research engine and paper-trading harness for Binance ETHUSDT Perpetual Futures.**
+
+> **Research only. Not investment advice or a live-execution product.** Read [the full disclaimer](DISCLAIMER.md) and [known limitations and safety review](docs/SAFETY_AND_LIMITATIONS.md). Simulated results are not proof of future profitability.
 
 ---
 
@@ -18,7 +20,8 @@
 1. **Academic and Research Purpose Only:** This repository is an open-source quantitative research framework developed for reproducible scientific backtesting, feature causality verification, and algorithmic auditing. It is not financial advice, an investment recommendation, or a commercial signal service.
 2. **No Historical Parity Guarantee:** The models and heuristics contained herein (including `V22-R`) are independent reconstructions of earlier research hypotheses. As thoroughly documented in the audit logs, original training artifacts from legacy versions were unpreserved, making reconstructed models distinct model families whose performance must not be conflated with historical theoretical claims.
 3. **Severe Financial Risk:** Cryptocurrency derivative trading carries substantial financial risk, including liquidation and total loss of capital. This software is configured in `research_only` mode by default. **DO NOT** connect live financial exchange accounts or private trading API keys.
-4. **No Warranties:** This software is provided under the Apache-2.0 License "AS IS", without warranties or conditions of any kind, either express or implied.
+4. **No Warranties:** This software is provided under the Apache-2.0 License "AS IS", without warranties or conditions of any kind, either express or implied, except where the law does not permit exclusion.
+5. **No Live Execution:** Do not connect exchange secrets, fund accounts, or treat paper positions as real trade orders. The reviewed code has no identified private trading interface, but forks and future changes are outside this claim. [Read the complete disclaimer](DISCLAIMER.md).
 
 ---
 
@@ -43,15 +46,17 @@
 - [Roadmap: Antigravity Portable Trading Skills](#roadmap-antigravity-portable-trading-skills)
 - [Contributing](#contributing)
 - [Security Policy](#security-policy)
+- [Full Risk Disclaimer](DISCLAIMER.md)
+- [Known Limitations and Review Scope](docs/SAFETY_AND_LIMITATIONS.md)
 - [License & Citation](#license--citation)
 
 ---
 
 ## Core Mission & Philosophy
 
-The crypto algorithmic trading landscape is dominated by overfitted backtests, hidden lookahead bias, unmodeled taker slippage, and unreplicable cherry-picked wins. 
+The crypto algorithmic trading landscape is dominated by overfitted backtests, hidden lookahead bias, unmodeled taker slippage, and unreplicable cherry-picked wins.
 
-`ETH-Quant-Research` was built to counter these practices through **absolute scientific discipline**:
+`ETH-Quant-Research` was built to counter these practices through **reproducible research controls**:
 - **Zero Third-Party Runtime Dependencies:** Implemented exclusively with the Python Standard Library (`urllib`, `sqlite3`, `hashlib`, `math`, `json`, `dataclasses`). Fast, lightweight, portable across Windows, Linux, and macOS.
 - **Strictly Causal Information Flow:** Decisions for the next 15-minute bar are formed exclusively from closed candles.
 - **Audited Parity & Preservation:** Preserves 22 iterations of historical research reports (`research/backtests/V01..V22`) and transparently documents every failure mode, adaptation defect, and data discrepancy.
@@ -86,7 +91,7 @@ The classification model evaluates next-15m directional expectancy ($y \in \{\te
 
 ### 4. Dynamic Execution & Friction Modeling
 - **Entry-Anchored Trailing Rules:** Stop-loss ($1.5 \times \text{ATR}_7$) and take-profit ($2.5 \times \text{ATR}_7$) are fixed at the entry bar to prevent intra-trade target drift.
-- **Realistic Friction Schedule:** Every executed order applies realistic institutional taker friction:
+- **Illustrative Simulation Friction:** Each simulated fill uses assumed transaction-cost parameters (not a guarantee of executable live prices):
   - Exchange Taker Commission: $0.05\%$
   - Half-Spread Penalty: $0.005\%$
   - Adverse Execution Slippage: $0.005\%$
@@ -94,10 +99,10 @@ The classification model evaluates next-15m directional expectancy ($y \in \{\te
 - **Single Concurrent Position:** Conservative portfolio management enforcing a maximum of 1 active position at $1.0\times$ unleveraged capital.
 
 ### 5. Cryptographic Research Freeze Gate
-Strategy parameters and operational code are tracked via an immutable cryptographic manifest (`outputs/05b_freeze_manifest.json`). Any modification to code or parameters breaks the SHA-256 integrity seal, ensuring reproducible research audits.
+Selected frozen strategy files are checked against SHA-256 hashes in the versioned manifest (`outputs/05b_freeze_manifest.json`). The verification detects changes to covered files when run; the repository and local logs are not tamper-proof.
 
 ### 6. ACID SQLite Paper-Trading Engine
-The operational runner (`src/eth_research/runner.py`) uses an embedded SQLite database configured in Write-Ahead Logging (`PRAGMA journal_mode=WAL`) with foreign key constraints, providing an immutable audit trail of every evaluated signal, active position, and realized PnL.
+The operational runner (`src/eth_research/runner.py`) uses an embedded SQLite database configured in Write-Ahead Logging (`PRAGMA journal_mode=WAL`) with foreign key constraints, recording a local (not tamper-proof) audit log of simulated signals, positions, and PnL.
 
 ---
 
@@ -178,11 +183,11 @@ python scripts/check_workspace.py
 *Expected output:* `PASS: 22 immutable original research reports V01..V22 present`
 
 ### 3. Run the Automated Unit Test Suite
-Execute the 63 unit tests verifying data causality, feature extraction, policy thresholds, dynamic execution, and sealed window containment:
+Execute the unit tests covering data causality, policy thresholds, simulation, sealed windows, and research-only safety controls:
 ```bash
 python -m unittest discover -s tests -v
 ```
-*Expected output:* `Ran 63 tests in ~3s. OK`
+*Expected output:* `OK` (test count and runtime vary by version and platform).
 
 ### 4. Run Operational Health Check
 Verify checkpoint integrity, SQLite persistence in WAL mode, public Binance endpoint reachability, and V23 sealed gate protection:
@@ -240,13 +245,13 @@ Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) for full instructions on our co
 
 ## Security Policy
 
-Security and safety are built into the engine by design. The codebase is locked in `research_only` mode and contains zero facilities to execute real financial transactions. To report vulnerabilities or security issues, please review [`SECURITY.md`](SECURITY.md).
+The reviewed repository is intended for `research_only` operation and contains no identified private exchange order-submission interface. This is a scoped source review, not a security or legal certification; modified forks may add execution. See [`SECURITY.md`](SECURITY.md), [`DISCLAIMER.md`](DISCLAIMER.md), and [`docs/SAFETY_AND_LIMITATIONS.md`](docs/SAFETY_AND_LIMITATIONS.md).
 
 ---
 
 ## License & Citation
 
-Distributed under the **Apache-2.0 License**. See [`LICENSE`](LICENSE) for details.
+Distributed under the **Apache-2.0 License**. See [`LICENSE`](LICENSE) for details. The [research and financial risk disclaimer](DISCLAIMER.md) explains intended use and material limitations. Neither the license nor a disclaimer eliminates non-waivable liability.
 
 If you use this research framework or dataset corpus in academic work or open-source projects, please cite:
 
